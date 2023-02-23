@@ -8,4 +8,8 @@ abstract class Duck {
         System.out.println("수영중");
     }
     abstract void display();
+
+    void fly() {
+        System.out.println("날아다니는중");
+    }
 }
