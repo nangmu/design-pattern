@@ -1,6 +1,7 @@
 package ch1.strategy;
 
 abstract class Duck {
+    FlyBehavior flyBehavior = new SimpleFlyBehavior();
     void quack() {
         System.out.println("꽥꽥");
     }
@@ -10,6 +11,16 @@ abstract class Duck {
     abstract void display();
 
     void fly() {
-        System.out.println("날아다니는중");
+        flyBehavior.fly();
+    }
+    public void setFlyable(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
+
+    @Override
+    public String toString() {
+        return "Duck{" +
+                "flyBehavior=" + flyBehavior +
+                '}';
     }
 }
